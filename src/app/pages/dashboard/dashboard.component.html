@@ -1,0 +1,59 @@
+<div class="dashboard grid-container">
+    <div class="filters">
+        <app-input-search placeholder="ค้นหาสินค้า" [(value)]="searchText" class="search-input"></app-input-search>
+
+        <nz-select [(ngModel)]="selectedStatus" nzAllowClear nzPlaceHolder="Select">
+            <nz-option nzValue="all" nzLabel="All"></nz-option>
+            <nz-option nzValue="Steel" nzLabel="Steel"></nz-option>
+            <nz-option nzValue="PVC" nzLabel="PVC"></nz-option>
+            <nz-option nzValue="Wires" nzLabel="Wires"></nz-option>
+        </nz-select>
+
+        <nz-checkbox [(ngModel)]="lowStockChecked" class="text-white" (ngModelChange)="filterProducts()">
+            สินค้าน้อยกว่า 25 ชิ้น
+        </nz-checkbox>
+    </div>
+
+    <div class="content">
+        <div *ngIf="pagedProducts.length > 0; else noData" class="product-cards">
+            <div class="product-card" *ngFor="let product of products
+            | searchFilterPipe:searchText:undefined:selectedStatus
+            | paginate:currentPage:pageSize">
+                <h3 class="text-white">{{ product.name }}</h3>
+                <p class="text-gray"><strong>SKU:</strong> {{ product.sku }}</p>
+                <p class="text-gray"><strong>หมวดหมู่:</strong> {{ product.category }}</p>
+                <p class="text-white"><strong>ราคา:</strong> {{ product.price | number }} บาท / ชิ้น</p>
+                <p [ngClass]="{'text-green': product.quantity >= 25, 'text-red': product.quantity < 25}">
+                    <strong>คงเหลือ:</strong> {{ product.quantity }}
+                </p>
+                <p class="text-gray"><strong>ผู้จัดหา:</strong> {{ product.supplier }}</p>
+                <div class="buttons">
+                    <app-button-generic [label]="'Edit'" (clicked)="editProduct(product)"
+                        classes="btn-yellow"></app-button-generic>
+                    <app-button-generic [label]="'Delete'" (clicked)="deleteProduct(product)"
+                        classes="btn-red"></app-button-generic>
+                </div>
+            </div>
+        </div>
+
+        <ng-template #noData>
+            <p class="text-white text-center">ไม่มีข้อมูล</p>
+        </ng-template>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination pagination-container">
+        <div class="pagination-buttons">
+            <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1" class="pagination-btn">
+                ก่อนหน้า
+            </button>
+            <span class="pagination-info">หน้า {{currentPage}} / {{totalPages}}</span>
+            <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages" class="pagination-btn">
+                ถัดไป
+            </button>
+        </div>
+        <select [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange()" class="pagination-select">
+            <option *ngFor="let size of pageSizes" [value]="size">{{size}}</option>
+        </select>
+    </div>
+</div>

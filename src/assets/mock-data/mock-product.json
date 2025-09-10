@@ -1,0 +1,141 @@
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "id": 1,
+            "name": "ท่อเหล็กกลม 3/4\"",
+            "sku": "ST-074",
+            "category": "Steel",
+            "price": 420,
+            "quantity": 120,
+            "supplier": "ABC Steel Co."
+        },
+        {
+            "id": 2,
+            "name": "ท่อเหล็กกลม 1\"",
+            "sku": "ST-100",
+            "category": "Steel",
+            "price": 500,
+            "quantity": 80,
+            "supplier": "ABC Steel Co."
+        },
+        {
+            "id": 3,
+            "name": "เหล็กรางน้ำ 4\"",
+            "sku": "ST-R04",
+            "category": "Steel",
+            "price": 350,
+            "quantity": 60,
+            "supplier": "Steel Supplier Ltd."
+        },
+        {
+            "id": 4,
+            "name": "ท่อ PVC 1/2\"",
+            "sku": "PVC-050",
+            "category": "PVC",
+            "price": 120,
+            "quantity": 40,
+            "supplier": "PVC Supplier"
+        },
+        {
+            "id": 5,
+            "name": "ท่อ PVC 1\"",
+            "sku": "PVC-100",
+            "category": "PVC",
+            "price": 200,
+            "quantity": 20,
+            "supplier": "PVC Supplier"
+        },
+        {
+            "id": 6,
+            "name": "ท่อ PVC 2\"",
+            "sku": "PVC-200",
+            "category": "PVC",
+            "price": 350,
+            "quantity": 10,
+            "supplier": "PVC Supplier"
+        },
+        {
+            "id": 7,
+            "name": "สายไฟ 2.5 mm²",
+            "sku": "WIRE-25",
+            "category": "Wires",
+            "price": 15,
+            "quantity": 200,
+            "supplier": "Wire Co."
+        },
+        {
+            "id": 8,
+            "name": "สายไฟ 4 mm²",
+            "sku": "WIRE-40",
+            "category": "Wires",
+            "price": 25,
+            "quantity": 150,
+            "supplier": "Wire Co."
+        },
+        {
+            "id": 9,
+            "name": "สายไฟ 6 mm²",
+            "sku": "WIRE-60",
+            "category": "Wires",
+            "price": 40,
+            "quantity": 50,
+            "supplier": "Wire Co."
+        },
+        {
+            "id": 10,
+            "name": "เหล็กตัวซี 3\"",
+            "sku": "ST-C03",
+            "category": "Steel",
+            "price": 300,
+            "quantity": 90,
+            "supplier": "Steel Supplier Ltd."
+        },
+        {
+            "id": 11,
+            "name": "เหล็กตัวซี 4\"",
+            "sku": "ST-C04",
+            "category": "Steel",
+            "price": 400,
+            "quantity": 70,
+            "supplier": "Steel Supplier Ltd."
+        },
+        {
+            "id": 12,
+            "name": "ท่อ PVC 3/4\"",
+            "sku": "PVC-075",
+            "category": "PVC",
+            "price": 150,
+            "quantity": 60,
+            "supplier": "PVC Supplier"
+        },
+        {
+            "id": 13,
+            "name": "ท่อ PVC 3\"",
+            "sku": "PVC-300",
+            "category": "PVC",
+            "price": 500,
+            "quantity": 5,
+            "supplier": "PVC Supplier"
+        },
+        {
+            "id": 14,
+            "name": "สายไฟ 10 mm²",
+            "sku": "WIRE-100",
+            "category": "Wires",
+            "price": 80,
+            "quantity": 30,
+            "supplier": "Wire Co."
+        },
+        {
+            "id": 15,
+            "name": "สายไฟ 16 mm²",
+            "sku": "WIRE-160",
+            "category": "Wires",
+            "price": 120,
+            "quantity": 12,
+            "supplier": "Wire Co."
+        }
+    ]
+}

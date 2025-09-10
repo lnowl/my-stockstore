@@ -1,0 +1,76 @@
+.w-100px {
+    width: 100px;
+}
+
+button {
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-blue {
+    background-color: #008cff;
+
+    &:hover {
+        background-color: #418cc9;
+    }
+}
+
+.btn-green {
+    background-color: #4e8b61;
+
+    &:hover {
+        background-color: #74a784;
+    }
+}
+
+.btn-red {
+    background-color: #c0392b;
+
+    &:hover {
+        background-color: #b04f45;
+    }
+}
+
+.btn-yellow {
+    background-color: #e9c74b;
+
+    &:hover:not(:disabled) {
+        background-color: #962d22;
+    }
+}
+
+.btn-save {
+    background-color: #007bff;
+
+    &:hover:not(:disabled) {
+        background-color: #0056b3;
+    }
+}
+
+.btn-cancel {
+    background-color: #c0392b;
+
+    &:hover:not(:disabled) {
+        background-color: #962d22;
+    }
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666;
+}
+
+.btn-export {
+    background-color: #364152;
+
+    &:hover:not(:disabled) {
+        background-color: #48576e;
+    }
+}

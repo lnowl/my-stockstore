@@ -1,0 +1,71 @@
+<div class="navbar">
+    <div class="navbar-left">
+        <p (click)="goToDashboard()">StockStore</p>
+    </div>
+    <div class="navbat-right">
+        <app-button-generic [label]="'Export'" (clicked)="export()" classes="btn-export"
+            class="mx-1"></app-button-generic>
+        <app-button-generic [label]="'Add products'" (clicked)="addProduct()" classes="btn-blue"
+            class="mx-1"></app-button-generic>
+        <app-button-generic [label]="'Dashboard'" (clicked)="goToDashboard()" classes="btn-green"
+            class="mx-1"></app-button-generic>
+    </div>
+
+    <!-- POPUP CREATE CUSTOMER -->
+    <div class="popup-backdrop" *ngIf="showCreatePopup">
+        <div class="popup-content">
+            <h3 class="popup-title">เพิ่มสินค้าใหม่</h3>
+
+            <form #createForm="ngForm" (ngSubmit)="createProduct(createForm.value)" novalidate>
+
+                <div class="form-group">
+                    <input name="name" ngModel placeholder="ชื่อสินค้า" required #name="ngModel" />
+                    <div class="error" *ngIf="name.invalid && name.touched">
+                        กรุณากรอกชื่อสินค้า
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <nz-select name="category" ngModel [nzOptions]="categories" nzAllowClear nzPlaceHolder="หมวดหมู่"
+                        required>
+                    </nz-select>
+                </div>
+
+                <div class="form-group">
+                    <input name="sku" ngModel placeholder="SKU" required #sku="ngModel" />
+                    <div class="error" *ngIf="sku.invalid && sku.touched">
+                        กรุณากรอก SKU
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" name="price" ngModel placeholder="ราคา" required #price="ngModel" />
+                </div>
+
+                <div class="form-group">
+                    <input type="number" name="quantity" ngModel placeholder="จำนวนคงเหลือ" required
+                        #quantity="ngModel" />
+                </div>
+
+                <div class="form-group">
+                    <input name="unit" ngModel placeholder="หน่วย" />
+                </div>
+
+                <div class="form-group">
+                    <input name="supplier" ngModel placeholder="ผู้จัดหา" />
+                </div>
+
+                <div class="button-group">
+                    <app-button-generic [label]="'บันทึก'" [classes]="'btn-save w-100px'"
+                        [disabled]="createForm.invalid" type="submit">
+                    </app-button-generic>
+
+                    <app-button-generic [label]="'ยกเลิก'" [classes]="'btn-cancel w-100px'"
+                        (clicked)="closeCreatePopup()">
+                    </app-button-generic>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
